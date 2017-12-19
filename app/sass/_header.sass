@@ -1,0 +1,96 @@
+.header
+  z-index: 9
+  &__second
+    width: 100%
+    background: $blue
+  &__first
+    width: 100%
+    background: $def-color
+  &__logo
+    margin-top: 13px
+    display: block
+    img
+      width: 83px
+      height: auto
+  &__tel
+    color: white
+    transition: .2s
+    display: block
+    margin-top: 30px
+    font-weight: 300
+    &:hover
+      color: $orange
+    &-icon
+      margin-right: 10px
+      font-size: 18px
+  &__btnBlock
+    display: block
+    text-align: center
+    width: 131px
+    padding: 12px 0 10px
+    background: $blue
+    color: white
+    font-weight: 300
+    border-right: 1px solid $def-color
+    border-bottom: 1px solid $def-color
+    span
+      display: block
+      height: 28px
+    &-icon
+      font-size: 20px
+    &-text
+      font-size: .9em
+    &:hover
+      background: $orange
+  &__btnCategory
+    background: $orange
+    color: white
+    padding: 20px 40px 20px 20px
+    width: 100%
+    box-sizing: border-box
+    font-size: 20px
+    text-transform: uppercase
+    &-icon
+      margin-right: 10px
+      font-size: 25px
+    &:hover
+      background: darken($orange,10)
+  .header__wrapperCats
+    position: relative
+  .categoriesWrapper
+    position: absolute
+    top: 100%
+    box-shadow: 0 0 10px rgba(6, 6, 6, 0.3)
+    a
+      padding: 0 10px
+      text-transform: uppercase
+      min-height: 45px
+      height: 45px
+    li
+      border-bottom: 1px solid #ebebeb
+      &:hover
+        &>a
+          color: $orange
+    .catItem-icon
+      font-size: 1.2em
+      margin-right: 10px
+      color: $blue
+    .wrapperSubCats
+      position: absolute
+      box-shadow: 0 0 10px rgba(6, 6, 6, 0.3)
+      left: 100%
+      top: 0
+      background: white
+      width: 832px
+      box-sizing: border-box
+
+    .subCats
+      a
+        display: flex
+        align-items: center
+  &__wrapperCats.open
+    .header
+      &__btnCategory
+        background: $light-blue
+        &:hover
+          background: darken($light-blue,10)

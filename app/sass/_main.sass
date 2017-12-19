@@ -1,0 +1,52 @@
+body
+  font-family: 'Roboto', sans-serif
+  background: white
+  font-size: 14px
+  padding: 0
+  margin: 0
+  font-weight: 400
+  line-height: 1.2em
+.container
+  width: $site-width
+  margin: auto
+
+.flex
+  display: flex
+  &--j
+    &-between
+      justify-content: space-between
+    &-left
+      justify-content: flex-start
+    &-right
+      justify-content: flex-end
+    &-center
+      justify-content: center
+  &--a
+    &-center
+      align-items: center
+    &-top
+      align-items: flex-start
+    &-bottom
+      align-items: flex-end
+
+a
+  text-decoration: none
+  color: $def-color
+  transition: $def-transition
+
+.col-9
+  width: 66.666%
+.col-3
+  width: 25%
+.col-5
+  width: 41.667%
+.col-4
+  width: 33.333%
+
+.text-center
+  text-align: center
+ul
+  margin: 0
+  padding: 0
+  li
+    list-style: none
