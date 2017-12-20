@@ -1,0 +1,41 @@
+.filter
+  background: #f5f5f5
+  padding: 10px 10px
+  &__title
+    margin: 0
+    font-size: 18px
+    color: $blue
+    text-transform: uppercase
+  &__items-title
+    display: block
+    margin: 20px 0 10px
+    border-bottom: 1px solid #bbbbbb
+    padding-bottom: 5px
+  &__item
+    cursor: pointer
+    transition: $def-transition
+    &:hover
+      color: $orange
+      .square
+        border: 1px solid $orange
+    &.active
+      .square
+        color: $orange
+        border: 1px solid $orange
+        i
+          display: block
+  .square
+    width: 20px
+    height: 20px
+    background: none
+    border: 1px solid #bbbbbb
+    border-radius: 2px
+    margin-right: 10px
+    transition: $def-transition
+    i
+      display: none
+  .form-group
+    margin: 10px 0
+    input
+      &[type='checkbox']
+        display: none

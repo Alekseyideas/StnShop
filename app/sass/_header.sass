@@ -1,5 +1,6 @@
 .header
   z-index: 9
+  position: relative
   &__second
     width: 100%
     background: $blue
@@ -58,25 +59,34 @@
   .header__wrapperCats
     position: relative
   .categoriesWrapper
+    display: none
     position: absolute
+    background: white
     top: 100%
     box-shadow: 0 0 10px rgba(6, 6, 6, 0.3)
-    a
-      padding: 0 10px
-      text-transform: uppercase
-      min-height: 45px
-      height: 45px
+    ul
+      position: relative
     li
       border-bottom: 1px solid #ebebeb
+      &>a
+        padding: 0 10px
+        text-transform: uppercase
+        min-height: 45px
+        height: 45px
+        .fa-mobile
+          font-size: 25px
       &:hover
         &>a
           color: $orange
-
+        .wrapperSubCats
+          display: block
     .catItem-icon
       font-size: 1.2em
       margin-right: 10px
       color: $blue
+      min-width: 25px
     .wrapperSubCats
+      height: 100%
       position: absolute
       box-shadow: 0 0 10px rgba(6, 6, 6, 0.3)
       left: 100%
@@ -84,14 +94,69 @@
       background: white
       width: 832px
       box-sizing: border-box
-
+      padding: 0 20px
+      display: none
     .subCats
+      margin-right: 20px
       a
         display: flex
         align-items: center
   &__wrapperCats.open
+    .categoriesWrapper
+      display: block
+
     .header
       &__btnCategory
         background: $light-blue
         &:hover
           background: darken($light-blue,10)
+  .sharesCat
+    text-align: center
+    border: 1px solid $orange
+    padding: 20px
+    margin: 10px 0
+    &__title
+      margin: 0
+      font-size: 1.8em
+      font-weight: 400
+      text-transform: uppercase
+      color: $orange
+    &__product
+      &-title
+        display: block
+        text-align: left
+        font-size: .9em
+        padding: 10px
+        background: rgba(244, 244, 244, 0.95)
+        margin-top: 10px
+      &-price
+        font-size: 25px
+        &_currency
+          font-size: .5em
+    .btn
+      font-size: 18px
+  &__search
+    position: relative
+    display: block
+    width: 90%
+    float: right
+    margin-top: 10px
+    input
+      width: 100%
+      border: 0
+      background: rgba(white,.3)
+      padding: 17px 10px
+      border-radius: 3px
+      transition: $def-transition
+      &:focus
+        background: rgba(white,.6)
+      &::placeholder
+        color: $def-color
+        font-family: $def-font
+    .btn
+      position: absolute
+      top: 0
+      font-size: 20px
+      right: 10px
+      color: $def-color
+      line-height: 30px

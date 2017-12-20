@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/stylesheet.min.css?<?echo rand()?>">
 </head>
 <body>
+
     <header class="header">
         <div class="header__first">
             <div class="container">
@@ -57,37 +58,62 @@
                             </a>
 
 
-                            <div class="categoriesWrapper">
-                                <ul>
-                                    <li>
+                            <?
+                            function catList($icon, $name){
+                                ?>
+                              <li>
                                         <a href="#" class="flex flex--a-center">
-                                            <span class="catItem-icon"><i class="fa fa-laptop" aria-hidden="true"></i></span>
-                                            <span>НОУТБУКИ, ПЛАНШЕТЫ КОМПЬЮТЕРЫ</span>
+                                            <span class="catItem-icon">
+                                        <i class="fa <?echo $icon?>" aria-hidden="true"></i>
+                                            </span>
+                                            <span>
+                                            <?echo $name?>
+                                            </span>
+
                                         </a>
 
                                         <div class="wrapperSubCats">
                                             <div class="flex">
                                                 <div class="col-4">
                                                     <ul class="subCats">
-                                                        <li><a href="product.php"><span>DECT телефоны</span></a></li>
-                                                        <li><a href="product.php"><span>GSM-шлюзы</span></a></li>
-                                                        <li><a href="product.php"><span>АТС</span></a></li>
-                                                        <li><a href="product.php"><span>Проводные телефоны</span></a></li>
-                                                        <li><a href="product.php"><span>Сотовые телефоны</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>DECT телефоны</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>GSM-шлюзы</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>АТС</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>Проводные телефоны</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>Сотовые телефоны</span></a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-4">
                                                     <ul class="subCats">
-                                                        <li><a href="product.php"><span>DECT телефоны</span></a></li>
-                                                        <li><a href="product.php"><span>GSM-шлюзы</span></a></li>
-                                                        <li><a href="product.php"><span>АТС</span></a></li>
-                                                        <li><a href="product.php"><span>Проводные телефоны</span></a></li>
-                                                        <li><a href="product.php"><span>Сотовые телефоны</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>DECT телефоны</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>GSM-шлюзы</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>АТС</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>Проводные телефоны</span></a></li>
+                                                        <li><a href="<? echo $GLOBALS['catLink'] ?>"><span>Сотовые телефоны</span></a></li>
                                                     </ul>
                                                 </div>
                                                <div class="col-4">
                                                     <div class="sharesCat">
+                                                        <h3 class="sharesCat__title">
+                                                            Акция
+                                                        </h3>
+                                                        <a href="<? echo $GLOBALS['catLink'] ?>" class="sharesCat__product-title">
+                                                           <span>Радиотелефон PANASONIC KX-TG1711, CAB, CAB</span>
+                                                        </a>
+                                                        <a href="<? echo $GLOBALS['catLink'] ?>" class="sharesCat__product-img">
+                                                            <img src="../images/prdoduct/product-1.jpg" alt="prdoduct">
+                                                        </a>
+                                                        <div class="sharesCat__product-price">
+                                                            <span class="oldPrice">
+                                                                <span class="price_currency">〒</span>10 540</span>
+                                                            <span class="price">
+                                                                <span class="price_currency">〒</span>9 990
+                                                            </span>
+                                                        </div>
+                                                        <? btnOrder() ?>
+                                                        <? btnComparison() ?>
+
 
                                                     </div>
                                                </div>
@@ -99,12 +125,29 @@
 
 
                                     </li>
-                                    <li>
-                                        <a href="#" class="flex flex--a-center">
-                                            <span class="catItem-icon"><i class="fa fa-fax" aria-hidden="true"></i></span>
-                                            <span>ТЕЛЕФОНЫ И СВЯЗЬ</span>
-                                        </a>
-                                    </li>
+                            <?
+                            return false;
+                            }
+                            ?>
+
+                            <div class="categoriesWrapper">
+                                <ul>
+                                    <? echo catList('fa-laptop','НОУТБУКИ, ПЛАНШЕТЫ КОМПЬЮТЕРЫ')?>
+                                    <? echo catList('fa-fax','ТЕЛЕФОНЫ И СВЯЗЬ')?>
+                                    <? echo catList('fa-floppy-o','НОСИТЕЛИ ИНФОРМАЦИИ')?>
+                                    <? echo catList('fa-mobile','МОБИЛЬНЫЕ УСТРОЙСТВА')?>
+                                    <? echo catList('fa-camera','ПЕРИФЕРИЯ')?>
+                                    <? echo catList('fa-battery-three-quarters','ИСТОЧНИКИ ПИТАНИЯ')?>
+                                    <? echo catList('fa-microchip','АКСЕССУАРЫ')?>
+                                    <? echo catList('fa-sitemap','СЕТЕВОЕ ОБОРУДОВАНИЕ')?>
+                                    <? echo catList('fa-usb','СКС ОБОРУДОВАНИЕ')?>
+                                    <? echo catList('fa-code-fork','ПАССИВНОЕ ОБОРУДОВАНИЕ')?>
+                                    <? echo catList('fa-cloud','СЕРВЕРЫ И СХД')?>
+                                    <? echo catList('fa-columns','БЫТОВАЯ ТЕХНИКА')?>
+                                    <? echo catList('fa-video-camera','ВИДЕОНАБЛЮДЕНИЕ')?>
+                                    <? echo catList('fa-file-video-o','СИСТЕМЫ ВИЗУАЛИЗАЦИИ')?>
+                                    <? echo catList('fa-video-camera','ПРОФЕССИОНАЛЬНОЕ ВИДЕО')?>
+
                                 </ul>
                             </div>
 
@@ -112,10 +155,14 @@
 
                     </div>
                     <div class="col-9">
-
+                        <form action="" class="header__search">
+                            <input type="search" placeholder="Поиск...">
+                            <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
 
         </div>
     </header>
+

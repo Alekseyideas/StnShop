@@ -5,13 +5,16 @@ body
   padding: 0
   margin: 0
   font-weight: 400
-  line-height: 1.2em
 .container
   width: $site-width
   margin: auto
-
+img
+  width: 100%
+  height: auto
 .flex
   display: flex
+  &--wrap
+    flex-wrap: wrap
   &--j
     &-between
       justify-content: space-between
@@ -34,15 +37,20 @@ a
   color: $def-color
   transition: $def-transition
 
+.col-7
+  width: 58.334%
+.col-2
+  width: 16.666%
 .col-9
-  width: 66.666%
+  width: 75%
 .col-3
   width: 25%
 .col-5
   width: 41.667%
 .col-4
   width: 33.333%
-
+.row
+  padding: 0 20px
 .text-center
   text-align: center
 ul
@@ -50,3 +58,76 @@ ul
   padding: 0
   li
     list-style: none
+
+div,input,span,section,article,button,a
+  box-sizing: border-box
+
+
+.price
+  display: flex
+  justify-content: center
+  align-items: center
+  font-weight: 600
+  color: $orange
+  &_currency
+    font-size: .7em
+    margin-right: 5px
+.oldPrice
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  font-size: .7em
+  margin-bottom: 5px
+  &:after
+    content: ''
+    display: block
+    width: 90px
+    height: 1px
+    background: $orange
+    position: absolute
+    margin-left: -45px
+    left: 50%
+    top: 50%
+
+input
+  outline: 0
+button
+  cursor: pointer
+button.btn
+  display: block
+  background: none
+  border: 0
+  outline: 0
+.btn
+  display: block
+  text-align: center
+  margin: 10px 0
+  &__order
+    background: $orange
+    color: white
+    padding: 10px
+    text-transform: uppercase
+    i
+      margin-right: 10px
+    &:hover
+      background: darken( $orange,10)
+  &__comparison
+    background: $blue
+    color: white
+    padding: 10px
+    text-transform: uppercase
+    i
+      margin-right: 10px
+    &:hover
+      background: darken( $blue,10)
+.openPopUp
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  background: rgba(0, 0, 0, 0.18)
+  z-index: 2
+  display: none
+
