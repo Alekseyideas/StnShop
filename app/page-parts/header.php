@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stn</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/stylesheet.min.css?<?echo rand()?>">
 </head>
 <body>
@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="flex">
                     <div class="col-4">
-                        <a href="/" title="logo" class="header__logo"><img src="images/general/logo.svg" alt="logo"></a>
+                        <a href="<? echo $GLOBALS['home'] ?>" title="logo" class="header__logo"><img src="images/general/logo.svg" alt="logo"></a>
                     </div>
                     <div class="col-5 text-center">
                         <a href="tel:+77273330999" class="header__tel">
@@ -98,11 +98,11 @@
                                                         <h3 class="sharesCat__title">
                                                             Акция
                                                         </h3>
-                                                        <a href="<? echo $GLOBALS['catLink'] ?>" class="sharesCat__product-title">
+                                                        <a href="<? echo $GLOBALS['productLink'] ?>" class="sharesCat__product-title">
                                                            <span>Радиотелефон PANASONIC KX-TG1711, CAB, CAB</span>
                                                         </a>
-                                                        <a href="<? echo $GLOBALS['catLink'] ?>" class="sharesCat__product-img">
-                                                            <img src="../images/prdoduct/product-1.jpg" alt="prdoduct">
+                                                        <a href="<? echo $GLOBALS['productLink'] ?>" class="sharesCat__product-img">
+                                                            <img src="images/prdoduct/product-1.jpg" alt="prdoduct">
                                                         </a>
                                                         <div class="sharesCat__product-price">
                                                             <span class="oldPrice">

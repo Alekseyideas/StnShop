@@ -1,0 +1,260 @@
+.product-page
+  padding-bottom: 40px
+  &__title
+    font-size: 20px
+  &__image-items
+    width: 20%
+  &__image-item
+    width: 91px
+    height: 91px
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid #cecece
+    margin: 20px 0
+    cursor: pointer
+    border-radius: 3px
+    transition: $def-transition
+    &:hover
+      border-color: $orange
+      img
+        width: 75%
+    img
+      max-height: 100%
+      width: 70%
+      height: auto
+      transition: $def-transition
+
+  &__image
+    width: 80%
+    text-align: center
+    cursor: pointer
+    transition: .2s
+    &:hover
+      //transform: scale(1.01)
+    img
+      width: 80%
+  &__left
+    border-right: 1px solid #cecece
+  &__code
+    font-size: 13px
+    color: #737373
+  .product__price
+    font-size: 48px
+    margin-top: 10px
+    &>span
+      justify-content: flex-end
+    .oldPrice
+      margin-bottom: 0
+      font-size: .4em
+      &:after
+        left: initial
+        right: -5px
+    .price
+      color: $def-color
+  &__right
+    .wr-btns
+      margin-top: 30px
+    .btn
+      width: 230px
+      float: right
+      margin: 0 0 10px
+      font-size: 20px
+      text-transform: uppercase
+    .chars
+      border: 1px solid $def-color
+      padding: 10px 0
+      transition: $def-transition
+      font-size: 16px
+      &:hover
+        background: $def-color
+        color: white
+
+  .availability
+    margin-top: 10px
+    color: $def-color
+    display: flex
+    align-items: center
+    font-size: 13px
+    justify-content: flex-end
+    &:before
+      content: ''
+      display: block
+      width: 8px
+      height: 8px
+      background: $def-color
+      border-radius: 50%
+      margin-right: 10px
+
+  .charTabs
+    background: #e5e5e5
+  .tabBtn
+    text-transform: uppercase
+    padding: 20px
+    &:hover
+      background: #d1d1d1
+    &.active
+      background: $orange
+      color: white
+      &:hover
+        background: $orange
+  .tabContent
+    display: none
+    margin-top: 40px
+  .tabContent
+    color: grey
+    font-weight: 300
+    &__title
+      font-size: 24px
+      color: $def-color
+
+  table
+    width: 100%
+    .leftInfo
+      width: 40%
+    .rightInfo
+      width: 60%
+    .titleTable
+      font-size: 16px
+      color: $blue
+      font-weight: normal
+    td
+      padding: 10px 0 0
+    .borderBtn
+      border-bottom: 1px solid $blue
+      margin-bottom: 20px
+      padding: 25px 0 5px
+  .accessorie
+    &__item
+      border: 1px solid #d5d5d5
+      width: 85%
+      margin: auto
+      padding: 0 20px 10px
+      border-radius: 5px
+    &__title
+      font-size: 16px
+      font-weight: 400
+      height: 60px
+      overflow: hidden
+      &:hover
+        color: $orange
+    &__image
+      height: 220px
+      overflow: hidden
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+        max-height: 220px
+        width: auto
+  .accessoriesCarousel
+    .owl-prev,
+    .owl-next
+      position: absolute
+      top: 50%
+      font-size: 35px
+      margin-top: -20px
+      opacity: .3
+      transition: $def-transition
+      &:hover
+        opacity: 1
+    .owl-prev
+      left: -20px
+    .owl-next
+      right: -20px
+  .fixedTabs
+    position: fixed
+    top: -70px
+    left: 0
+    width: 100%
+    transition: .5s
+    z-index: 2
+    box-shadow: 0 2px 10px rgba(black,.3)
+    &.active
+      top: 152px
+  .topProductBuy
+    background: white
+    position: fixed
+    top: -70px
+    left: 0
+    width: 100%
+    padding: 5px 0
+    z-index: 8
+    transition: .5s
+    box-shadow: 0 2px 10px rgba(black,.2)
+    &.active
+      top: 70px
+    &__image
+      width: 5%
+    &__wrapper
+      width: 95%
+    &__title
+      margin-top: 10px
+      font-size: 14px
+      height: 17px
+      overflow: hidden
+    .availability
+      margin-top: 0
+      margin-left: 20px
+    .btn
+      font-size: 13px
+      padding: 0
+      height: 27px
+      line-height: 27px
+      width: 140px
+      margin-left: 20px
+    .product__price
+      font-size: 28px
+      margin: 0
+      margin-right: 20px
+
+
+  .popUp.ProductPopUp
+    width: 90%
+    height: 100%
+    max-height: 95%
+    top: 2.5%
+    left: 5%
+    margin-left: 0
+    display: none
+
+  .ProductPopUpCarousel
+    height: 93%
+    position: absolute
+    .owl-dots
+      text-align: center
+      &>div
+        margin: 0 5px
+        display: inline-block
+      span
+        display: block
+        width: 13px
+        height: 13px
+        background: rgba($def-color,.3)
+        border-radius: 50%
+      .active
+        span
+          background: $orange
+    .owl-stage-outer,.owl-stage,.owl-item
+      height: 100%
+    &__item
+      height: 100%
+      margin: auto
+      text-align: center
+      img
+        height: 100%
+        width: auto
+        margin: auto
+    .owl-prev,
+    .owl-next
+      position: absolute
+      top: 50%
+      font-size: 50px
+      opacity: .2
+      transition: .2s
+      &:hover
+        opacity: 1
+    .owl-prev
+      left: 0
+    .owl-next
+      right: 50px

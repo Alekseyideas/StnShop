@@ -10,6 +10,7 @@ function showPopUpBg() {
 }
 function closePopUpBg() {
     $('.openPopUp').hide();
+    $('.popUp').removeClass(animatioShow).addClass(animatioHide);
 }
 
 $('.header__btnCategory').click(function () {
@@ -23,6 +24,9 @@ $('.openPopUp').click(function () {
     $('.header__wrapperCats').removeClass('open');
 });
 
+var next = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+var prev = '<i class="fa fa-angle-left" aria-hidden="true"></i>';
+
 $('.main-slider').owlCarousel({
     loop: true,
     items: 1,
@@ -31,7 +35,7 @@ $('.main-slider').owlCarousel({
     autoplayTimeout: 10000,
     autoplayHoverPause: false,
     nav: true,
-    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
+    navText: [prev, next]
 });
 $('.main-slider .sliderItem').css('min-height', $(window).height() - 149 + 'px');
 $('main').css('min-height', $(window).height() - 149 - 158 + 'px');
@@ -57,4 +61,118 @@ $('.btn__trim').click(function () {
     $('.btn__trim').removeClass('active');
     $(this).addClass('active');
     trimFunction(trim);
+});
+
+var slidesCount = $('.sideBar .sideBarCarousel').length;
+
+for (var i = 0; i < slidesCount + 1; i++) {
+    $('.sideBarCar-' + i).owlCarousel({
+        items: 1,
+        nav: true,
+        navText: [prev, next],
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 7000
+    });
+}
+
+var tabActive = $('.tabBtn.active').attr('data-tab');
+$('#' + tabActive).show();
+
+$('.tabBtn').click(function () {
+    $('.tabContent').hide();
+    $('.tabBtn').removeClass('active');
+    var tabActive = $(this).attr('data-tab');
+    $('.tabBtn[data-tab=' + tabActive + ']').addClass('active');
+    $('#' + tabActive).show();
+});
+
+$('.accessoriesCarousel').owlCarousel({
+    items: 4,
+    nav: true,
+    navText: [prev, next],
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 700,
+    autoplayHoverPause: true
+
+});
+
+$('button.chars').click(function () {
+    $("html, body").animate({ scrollTop: $('.charTabs').offset().top }, 1000);
+    $('.tabBtn[data-tab="characteristics"]').click();
+});
+
+if ($('*').is('.charTabs')) {
+    var PosTab = $('.charTabs').position().top;
+}
+
+$(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 79) {
+        $(".header__second").addClass("fixed");
+        $('body').addClass('fixedHeader');
+    } else {
+        $(".header__second").removeClass("fixed");
+        $('body').removeClass('fixedHeader');
+    }
+
+    if (scroll >= 300) {
+        $('.topProductBuy').addClass('active');
+    } else {
+        $('.topProductBuy').removeClass('active');
+    }
+
+    if ($('*').is('.charTabs')) {
+        var _PosTab = $('.charTabs').position().top;
+
+        if (scroll >= _PosTab) {
+            $('.fixedTabs').addClass('active');
+        } else {
+            $('.fixedTabs').removeClass('active');
+        }
+    }
+});
+
+var seenPopUp = $('.SeenPopUp');
+var heightPopUPSeen = seenPopUp.height();
+
+seenPopUp.css('margin-top', '-' + heightPopUPSeen / 2 + 'px');
+
+var animatioShow = 'bounceInRight';
+var animatioHide = 'bounceOutLeft';
+
+$('.header__btnBlock--views').click(function () {
+    seenPopUp.show().removeClass(animatioHide).addClass(animatioShow);
+    showPopUpBg();
+});
+
+$('.closePopUp').click(function () {
+    $(this).parent().removeClass(animatioShow).addClass(animatioHide);
+    closePopUpBg();
+});
+
+$('.ProductPopUpCarousel').owlCarousel({
+    items: 1,
+    nav: true,
+    navText: [prev, next],
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 8000,
+    smartSpeed: 700,
+    autoplayHoverPause: true,
+    dots: true
+});
+$('.product-page__image-item').click(function () {
+    $('.ProductPopUp').show().removeClass(animatioHide).addClass(animatioShow);
+    showPopUpBg();
+    var n = $(this).attr('data-item');
+    $('.ProductPopUpCarousel').trigger('to.owl.carousel', n);
+});
+
+$('.product-page__image').click(function () {
+    $('.ProductPopUp').show().removeClass(animatioHide).addClass(animatioShow);
+    showPopUpBg();
+    $('.ProductPopUpCarousel').trigger('to.owl.carousel', 0);
 });
